@@ -104,7 +104,12 @@ module.exports = function (grunt) {
      */
     jshint: {
       files: [
-        'src/js/*.js',
+        //'src/js/config.js',
+        //'src/js/app.js',
+        //'src/js/controllers.js',
+        // 'src/js/directives.js',
+//         'src/js/filters.js',
+        'src/js/base.js',
         'Gruntfile.js'
       ],
       options: {
@@ -120,13 +125,17 @@ module.exports = function (grunt) {
     concat: {
       dev: {
         files: {
-          '<%= project.assets %>/js/scripts.min.js': '<%= project.js %>'
+          '<%= project.assets %>/js/base.min.js': '<%= project.js %>'
         }
       },
       options: {
         stripBanners: true,
         nonull: true,
-        banner: '<%= tag.banner %>'
+        banner: '<%= tag.banner %>\'use strict\';\n',
+	      process: function(src, filepath) {
+	            return '// Source: ' + filepath + '\n' +
+	              src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
+	          }
       }
     },
 

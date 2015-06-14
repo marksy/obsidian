@@ -1,14 +1,14 @@
 {
-  "name": "fireshell",
-  "title": "Fiercely quick and opinionated front-ends",
-  "url": "http://getfireshell.com",
-  "author": "Todd Motto",
-  "copyright": "2013",
-  "version": "1.1.0",
+  "name": "obsidian",
+  "title": "dashboard type of thing",
+  "url": "http://marksy.com",
+  "author": "marksy",
+  "copyright": "2015",
+  "version": "0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/toddmotto/fireshell.git"
+    "url": "http://github.com/dogpoo/dogpoo"
   },
   "devDependencies": {
     "bower": "~1.2.6",

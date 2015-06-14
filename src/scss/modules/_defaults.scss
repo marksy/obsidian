@@ -9,5 +9,43 @@ html {
 body {
   font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
   background: #fff;
-  color: #444;
+  color: $default-text;
+}
+//h1,h2,h3,h4,h5,p,a {
+//	color: $default-text;
+//}
+
+h1 {
+	font-size: 8rem;
+	line-height: 8rem;
+}
+h2 {
+	font-size: 6rem;
+	line-height: 6rem;
+}
+h3 {
+	font-size: 4rem;
+	line-height: 4rem;
+}
+h4 {
+	font-size: 3rem;
+	line-height: 3rem;
+}
+h5 {
+	font-size: 2rem;
+	line-height: 2rem;
+}
+p {
+	font-size: 6rem;
+}
+a {
+	color: $default-text;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#page {
+	background: $default-text;
+	color: #FDFAF2;
 }
