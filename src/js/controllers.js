@@ -42,6 +42,20 @@
 		
 	}]);
 	
+	app.controller('TFLController', ['$scope', '$rootScope', function($scope,$rootScope){
+		$scope.root = $rootScope;
+		
+		console.log('TFLController');
+		
+	}]);
+	
+	app.controller('StocksController', ['$scope', '$rootScope', function($scope,$rootScope){
+		$scope.root = $rootScope;
+		
+		console.log('StocksController');
+		
+	}]);
+	
 	app.controller('ConfigController', ['$scope', '$rootScope', function($scope,$rootScope){
 		$scope.root = $rootScope;
 		

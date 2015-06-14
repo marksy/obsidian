@@ -16,6 +16,14 @@
 				templateUrl: 'views/weather.html',
 				controller: 'WeatherController'
 			})
+			.when('/tfl', {
+				templateUrl: 'views/tfl.html',
+				controller: 'TFLController'
+			})
+			.when('/stocks', {
+				templateUrl: 'views/stocks.html',
+				controller: 'StocksController'
+			})
 			.when('/config', {
 				templateUrl: 'views/config.html',
 				controller: 'ConfigController'
