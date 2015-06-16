@@ -1,0 +1,21 @@
+.flash {
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 1000ms;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes flash {
+	0%   {
+		opacity: 1;
+	}
+	48% {
+		opacity: 1;
+	}
+	52% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+} 

@@ -15,32 +15,40 @@
   </head>
   <body>
 	  
-	  <section class="twitter" ng-cloak>
-	  	<p><span my-current-time="dateTimeFormat"></span></p>
-	  </section>
-
-	  <div id="page" ng-view ng-cloak class="container">
-	  </div>
-	  
-	  <section class="twitter">
-	  	tweets
-	  </section>
+	  <header>
+		<ul>
+			<li><a href="#/home">home</a></li>
+			<li><a href="#/weather">weather</a></li>
+			<li><a href="#/tfl">tfl</a></li>
+			<li><a href="#/strava">strava</a></li>
+			<li><a href="#/stocks">stocks</a></li>
+			<li><a href="#/config">config</a></li>
+		</ul>
+	  </header>
 	  
 	  <hr />
-	  
-	  <footer>
-		  <ul>
-	  	  	<li><a href="#/home">home</a></li>
-	  	  	<li><a href="#/weather">weather</a></li>
-	  	  	<li><a href="#/tfl">tfl</a></li>
-	  	  	<li><a href="#/stocks">stocks</a></li>
-	  	  	<li><a href="#/config">config</a></li>
-	  	  </ul>
-	  </footer>
+
+	<section class="date-time" ng-cloak>
+		<p><span my-current-time="dateTimeFormat"></span></p>
+	</section>
+
+	<div id="page" ng-view ng-cloak class="container">
+	</div>
+
+	<section class="twitter" ng-cloak ng-controller="TwtController">
+		<div id="cube">
+			<ul class="side front">
+				<li data-ng-repeat="item in items"><span class="twt username">{{ item.user.name }}</span> <span class="twt message">{{ item.text}}</span></li>
+			</ul>
+			<div class="side top"><p>updating...</p></div>
+		</div>
+	</section>
 	  
 	<script src="assets/components/angular.js" type="text/javascript" charset="utf-8"></script>
 	<script src="assets/components/angular-route.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/components/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/components/jquery.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="assets/components/codebird.js" type="text/javascript" charset="utf-8"></script>
+
 
     <script src="assets/js/base.min.js"></script>
 

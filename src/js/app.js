@@ -20,6 +20,10 @@
 				templateUrl: 'views/tfl.html',
 				controller: 'TFLController'
 			})
+			.when('/strava', {
+				templateUrl: 'views/strava.html',
+				controller: 'StravaController'
+			})
 			.when('/stocks', {
 				templateUrl: 'views/stocks.html',
 				controller: 'StocksController'

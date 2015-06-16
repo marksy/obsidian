@@ -3,7 +3,13 @@
 
 // clock
 
-// twitter 
+// twitter
+var	tweet,
+	twtDate,
+	twtUsername,
+	twtUserImg,
+	twtText;
+	var updateMinutes = (1000*60)*4;
 
 //weather
 var weatherKey = '08c33162-6e48-4b98-bfe7-38ccaae9c53d';
@@ -46,8 +52,32 @@ console.log(weatherCodes);
 
 
 //tfl
+//var tflKey = '2a45b9bd5d4a3699ccc79338d8bec6e7'; stupid TFL doesnt event support JSON so let's use something else:
+var tflUrl = 'http://labs.coruscantconsulting.co.uk/tube/api/lines.php?callback=mycallback_func';
+
+// var Foo = {
+//     bar: function() {
+//         alert("baz");
+//     }
+// }
+// Foo.bar();
+//strava
 
 //stocks GBP v NZD
+// openexchange
+
+var exchangeAppId = 'af3688c987aa4f4faa7740671a0f632e';
+var exchangeBaseUrl = 'https://openexchangerates.org/api/';
+var exchangeQuery = '?app_id=';
+var exchangeAPIlatest = 'latest.json',
+	exchangeAPIhistory = 'historical/YYYY-MM-DD.json',
+	exchangeAPIcurrencies = 'currencies.json',
+	exchangeAPItime = 'time-series.json';
+	
+	console.log('exchange latest: ' + exchangeBaseUrl+exchangeAPIlatest+exchangeQuery+exchangeAppId);
+	console.log('exchangeAPIhistory: ' + exchangeBaseUrl+exchangeAPIhistory+exchangeQuery+exchangeAppId);
+	console.log('exchangeAPIcurrencies: ' + exchangeBaseUrl+exchangeAPIcurrencies+exchangeQuery+exchangeAppId);
+	console.log('exchangeAPItime: ' + exchangeBaseUrl+exchangeAPItime+exchangeQuery+exchangeAppId);
 
 //now playing/spotify/itunes
 

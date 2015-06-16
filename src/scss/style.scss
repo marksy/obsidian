@@ -6,6 +6,7 @@
 
 @import 'mixins/_position.scss';
 @import 'mixins/_selection.scss';
+@import 'mixins/_animation.scss';
 
 //----------------------------------*\
 // CONFIG MODULES
@@ -36,6 +37,8 @@
 @import 'modules/_typography.scss';
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
+@import 'modules/_twitter.scss';
+@import 'modules/_animation.scss';
 
 // Enhancement modules
 @import 'modules/_breakpoints.scss';
