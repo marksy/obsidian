@@ -1,0 +1,57 @@
+.tube {
+
+	li {
+		position: relative;
+		
+		&.train-1 {
+			background-color: $bakerloo;
+		}
+		&.train-2 {
+			background-color: $central;
+		}
+		&.train-7 {
+			background-color: $circle;
+		}
+		&.train-9 {
+			background-color: $district;
+		}
+		&.train-8 {
+			background-color: $hcity;
+		}
+		&.train-4 {
+			background-color: $jubilee;
+		}
+		&.train-11 {
+			background-color: $metro;
+		}
+		&.train-5 {
+			background-color: $northern;
+		}
+		&.train-6 {
+			background-color: $piccadilly;
+		}
+		&.train-3 {
+			background-color: $victoria;
+		}
+		&.train-12 {
+			background-color: $wcity;
+		}
+		&.train-82 {
+			background-color: $overground;
+		}
+		&.train-83 {
+			background-color: $rail;
+		}
+		&.train-81 {
+			background-color: $dlr;
+		}
+	}
+	.service-gs {
+		position: absolute;
+		height: 100%;
+		right: 0;
+		top: 0;
+		display: block;
+		background: green;
+	}
+}

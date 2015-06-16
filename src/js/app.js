@@ -6,8 +6,8 @@
 	[
 		'ngRoute'
 	])
-	.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProver, $locationProvider, $httpProvider){
-		$routeProver
+	.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider){
+		$routeProvider
 			.when('/home', {
 				templateUrl: 'views/home.html',
 				controller: 'HomeController'

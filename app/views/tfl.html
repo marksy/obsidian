@@ -1,1 +1,7 @@
 <h2 id="tfl">tfl</h2>
+
+<ul class="tube">
+	<li ng-repeat="train in trains" class="train-{{ train.LineId}}">
+		<p>{{ train.LineName }} - <span>{{ train.Message}}</span> <span ng-if="StatusCode == GS" class="service-gs">{{ train.Status }}</span></p>
+	</li>
+</ul>

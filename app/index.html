@@ -15,10 +15,10 @@
   </head>
   <body>
 	  
-	  <header>
+	  <header ng-controller="HeaderController">
 		<ul>
-			<li><a href="#/home">home</a></li>
-			<li><a href="#/weather">weather</a></li>
+			<li ng-class="{ 'active': isActive('#/home')}"><a href="#/home">home</a></li>
+			<li ng-class="{ 'active': isActive('#/weather')}"><a href="#/weather">weather</a></li>
 			<li><a href="#/tfl">tfl</a></li>
 			<li><a href="#/strava">strava</a></li>
 			<li><a href="#/stocks">stocks</a></li>

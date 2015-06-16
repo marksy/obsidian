@@ -53,15 +53,12 @@ console.log(weatherCodes);
 
 //tfl
 //var tflKey = '2a45b9bd5d4a3699ccc79338d8bec6e7'; stupid TFL doesnt event support JSON so let's use something else:
-var tflUrl = 'http://labs.coruscantconsulting.co.uk/tube/api/lines.php?callback=mycallback_func';
+var tflUrl = 'http://labs.coruscantconsulting.co.uk/tube/api/lines.php?callback=JSON';
 
-// var Foo = {
-//     bar: function() {
-//         alert("baz");
-//     }
-// }
-// Foo.bar();
+
 //strava
+var stravaUrl = 'http://www.strava.com/api/v3/athlete/activities?per_page=4&access_token=54b0e167486e9e58b52d9b1a73b5471e24c5cf58&callback=JSON';
+
 
 //stocks GBP v NZD
 // openexchange

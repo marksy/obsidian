@@ -3,9 +3,22 @@ header {
 		overflow: hidden;
 		text-align: center;
 		width: 100%;
+		padding-top: 0.8rem;
 	}
 	li {
 		display: inline;
 		margin-right: 1.2rem;
+		
+		a {
+			font-size: 2em;
+			text-decoration: none;
+			background-color: rgba(0,0,0,0.15);
+			padding: 2px 8px;
+			border-radius: 4px;
+			
+			&:hover {
+				background-color: rgba(0,0,0,0.3);
+			}
+		}
 	}
 }
