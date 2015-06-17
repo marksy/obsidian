@@ -1,5 +1,9 @@
 <h2 id="weather">weather</h2>
 
+		<div class="loading-icon center clear center-block" ng-show="root.isProcessing">
+			<p>Please wait...</p>
+		</div>
+
 <h3>{{ location }} today</h3>
 <ul>
 	<li class="temp">
@@ -31,3 +35,5 @@
 		<p>{{ typeTom }} <img ng-src="/assets/img/weather/{{ typeNoTom }}.svg" class="climacon" alt="{{ typeTom }}" /></p>
 	</li>
 </ul>
+
+		

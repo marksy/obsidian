@@ -7,6 +7,16 @@
 		$scope.root = $rootScope;
 		$scope.dateTimeFormat = 'd MMM h:mm a';
 		
+        $scope.root.setStatus = function (code) {
+            $scope.root.status = code;
+            $scope.root.message = HTTP_STATUS_CODES.getMessage(code);
+            if (code == 200) {
+            	$scope.root.isProcessing = false;
+            }
+        }
+
+        $scope.root.setStatus(200);
+		
 	}]);
 	
 	app.controller('HeaderController', ['$scope', '$location', function($scope,$location){
@@ -47,8 +57,9 @@
 	            }, updateMinutes);
 			}
 		}
-		// Twitter.update();
-// 		Twitter.later();
+		Twitter.update();
+		Twitter.later();
+		
 		
 	
 	}]);
@@ -61,6 +72,7 @@
 	}]);
 	
 	app.controller('WeatherController', ['$scope', '$rootScope', '$http', function($scope,$rootScope,$http){
+				
 		$scope.root = $rootScope;
 		
 		$scope.location = 'London';
@@ -75,7 +87,7 @@
 		    update: function() {
 				$http.get(weatherUrl).success(function(data,status,headers,config){
 					//console.log('weather-update');
-					console.log('weather is a ' + typeof data);
+					// console.log('weather is a ' + typeof data);
 					//Period[0] is today, and Rep[0] is the current segment
 					$scope.temp = data.SiteRep.DV.Location.Period[0].Rep[0].T;
 					$scope.windspeed = data.SiteRep.DV.Location.Period[0].Rep[0].S;
@@ -89,8 +101,8 @@
 					$scope.rainTom = data.SiteRep.DV.Location.Period[1].Rep[4].Pp;
 					$scope.typeNoTom = data.SiteRep.DV.Location.Period[1].Rep[4].W;
 					$scope.typeTom = weatherCodes[$scope.typeNo];
-	
-					//console.log(data.SiteRep.DV.Location.Period[0]);
+		
+					console.log(data.SiteRep.DV.Location.Period[0]);
 				})
 				.error(function(data,status,headers,config){
 					console.log('error: ' + data,status,headers,config);

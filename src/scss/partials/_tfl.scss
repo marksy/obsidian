@@ -46,12 +46,27 @@
 			background-color: $dlr;
 		}
 	}
-	.service-gs {
+	.service-code {
 		position: absolute;
 		height: 100%;
 		right: 0;
 		top: 0;
 		display: block;
-		background: green;
+		
+		&.service-gs {
+			background-color: green;
+		}
+		
+		&.service-sd {
+			background-color: red;
+		}
+		
+		&.service-md {
+			background-color: orange;
+		}
 	}
+	
+	
+	
+	
 }
