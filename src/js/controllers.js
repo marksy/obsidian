@@ -102,7 +102,7 @@
 					$scope.typeNoTom = data.SiteRep.DV.Location.Period[1].Rep[4].W;
 					$scope.typeTom = weatherCodes[$scope.typeNo];
 		
-					console.log(data.SiteRep.DV.Location.Period[0]);
+					//console.log(data.SiteRep.DV.Location.Period[0]);
 				})
 				.error(function(data,status,headers,config){
 					console.log('error: ' + data,status,headers,config);
@@ -125,12 +125,24 @@
 		$scope.root = $rootScope;
 		
 		$http.get(tflUrl).success(function (data,status,headers,config) {
+			// console.log('data: ' + data);
+			if(data[0] == '<') {
+				console.log('error coneccted');
+				// $scope.$apply(function () {
+					$scope.trains = { "trains": 
+					{"LineId":"0","LineName":"TFL","StatusCode":"SD","Status":"Error","Message":"Error with connection. Most likely their data is malformed.","IsDisrupted":false,"Disruptions":[]}
+					};
+					
+					console.log($scope.trains);
+				// });
+			} else {
+			console.log('tfl data seems fine');
 			var bisc = data.slice(6,-3);
 			var lamb = JSON.parse('{"trains":[' + bisc + ']}');
 
 			$scope.trains = lamb.trains;
-			
-			console.log(lamb.trains);
+			// console.log(lamb.trains);
+		}
 
 		})
 		.error(function (data,status,headers,config) {
@@ -144,12 +156,13 @@
 	app.controller('StravaController', ['$scope', '$rootScope', '$http', function($scope,$rootScope,$http){
 		$scope.root = $rootScope;
 		
-		$http.get(stravaUrl).success(function(data,status,headers,config){
-			console.log('strava: ' + data);
+		$http({ method: 'JSONP', url: stravaUrl }).success(function(data){
+			$scope.activities = data;
 		})
-		.error(function(data,status,headers,config){
-			console.log('error: ' + data,status,headers,config);
+		.error(function(data){
+			console.log('strava error: ' + data);
 		});
+		
 		
 		console.log('StravaController');
 		

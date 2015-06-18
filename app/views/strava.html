@@ -1,2 +1,9 @@
 <h2 id="strava">strava</h2>
-<p>nothing here</p>
+
+<ul>
+	<li ng-repeat="zebe in activities" style="margin-bottom: 20px;">
+		
+		<p>On {{ zebe.start_date | date: 'd MMM yyyy, h:mm a'}} I went for a {{ zebe.distance /1000 | number:2 }}km {{ zebe.type }}, which took me about {{ zebe.elapsed_time/60 | number:0}}mins. My average speed was {{ zebe.average_speed*1.60934 | number:2}}km/h, but my fastest speed was {{ zebe.max_speed*1.60934 | number: 2 }}km/h. It got my heart pumping to a maximum of {{ zebe.max_heartrate }}bpm but it generally stayed around a safe  {{ zebe.average_heartrate | number:0}}bpm. As I was on my wayback, I said to myself, "this {{ zebe.name }} is lovely" even though <span ng-if="zebe.kudos_count > 0 ">only</span> {{ zebe.kudos_count }} <span ng-if="zebe.kudos_count < 1 ">people</span> <span ng-if="zebe.kudos_count > 0 ">person</span> <span ng-if="zebe.kudos_count >= 2">people</span> liked this.</p>
+
+	</li>
+</ul>

@@ -6,10 +6,10 @@
 
 <ul class="tube">
 	<li ng-repeat="train in trains" class="train-{{ train.LineId}}">
-		<p>{{ train.LineName }} <span ng-if="train.Message"> - {{ train.Message}}</span> 
-			<span ng-if="train.StatusCode == 'GS'" class="service-code service-gs">{{ train.Status }}</span>
-			<span ng-if="train.StatusCode == 'MD'" class="service-code service-md">{{ train.Status }}</span>
-			<span ng-if="train.StatusCode == 'SD'" class="service-code service-sd">{{ train.Status }}</span>
-		</p>
+		<span class="service">{{ train.LineName }}</span>
+		<span ng-if="train.Message" class="service-message">{{ train.Message}}</span> 
+		<span ng-if="train.StatusCode == 'GS'" class="service-code service-gs">{{ train.Status }}</span>
+		<span ng-if="train.StatusCode == 'MD'" class="service-code service-md">{{ train.Status }}</span>
+		<span ng-if="train.StatusCode == 'SD'" class="service-code service-sd">{{ train.Status }}</span>
 	</li>
 </ul>

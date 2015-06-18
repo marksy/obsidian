@@ -2,6 +2,9 @@
 
 	li {
 		position: relative;
+		padding: 10px;
+		overflow: hidden;
+		font-size: 2rem;
 		
 		&.train-1 {
 			background-color: $bakerloo;
@@ -45,13 +48,24 @@
 		&.train-81 {
 			background-color: $dlr;
 		}
+		span {
+			display: block;
+			float: left;
+		}
 	}
+	.service {
+		width: 25%;
+	}
+	.service-message {
+		width: 50%;
+	}
+	
 	.service-code {
-		position: absolute;
-		height: 100%;
-		right: 0;
-		top: 0;
-		display: block;
+		min-width: 20%;
+		text-align: center;
+		float: right;
+		border: 2px solid #fff;
+		border-radius: $radius;
 		
 		&.service-gs {
 			background-color: green;

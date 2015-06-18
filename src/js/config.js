@@ -103,8 +103,11 @@ var tflUrl = 'http://labs.coruscantconsulting.co.uk/tube/api/lines.php?callback=
 
 
 //strava
-var stravaUrl = 'http://www.strava.com/api/v3/athlete/activities?per_page=4&access_token=54b0e167486e9e58b52d9b1a73b5471e24c5cf58&callback=JSON';
+var stravaAT = '54b0e167486e9e58b52d9b1a73b5471e24c5cf58';
+var stravaUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token=' + stravaAT + '&callback=JSON_CALLBACK';
 
+
+var taliwacker = null ;
 
 //stocks GBP v NZD
 // openexchange
