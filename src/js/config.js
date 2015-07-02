@@ -49,7 +49,10 @@ var HTTP_STATUS_CODES = {
 	}
 };
 
-// clock
+// time and date
+var toDate = new Date();
+var previousDay = new Date(toDate);
+
 
 // twitter
 var	tweet,
@@ -107,23 +110,17 @@ var stravaAT = '54b0e167486e9e58b52d9b1a73b5471e24c5cf58';
 var stravaUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token=' + stravaAT + '&callback=JSON_CALLBACK';
 
 
-var taliwacker = null ;
 
-//stocks GBP v NZD
+//finance GBP v NZD
 // openexchange
+var financeNZDCurrency = 'NZD';
+var financeGBPCurrency = 'GBP';
+var financeUSDCurrency = 'USD';
+var financeBaseCurrency = financeGBPCurrency;
+var financeUrl = 'http://api.fixer.io/';
+var financeLatest = financeUrl + 'latest?symbols=' + financeUSDCurrency + ',' + financeNZDCurrency + '&base=' + financeBaseCurrency + '&callback=JSON';
 
-var exchangeAppId = 'af3688c987aa4f4faa7740671a0f632e';
-var exchangeBaseUrl = 'https://openexchangerates.org/api/';
-var exchangeQuery = '?app_id=';
-var exchangeAPIlatest = 'latest.json',
-	exchangeAPIhistory = 'historical/YYYY-MM-DD.json',
-	exchangeAPIcurrencies = 'currencies.json',
-	exchangeAPItime = 'time-series.json';
-	
-	console.log('exchange latest: ' + exchangeBaseUrl+exchangeAPIlatest+exchangeQuery+exchangeAppId);
-	console.log('exchangeAPIhistory: ' + exchangeBaseUrl+exchangeAPIhistory+exchangeQuery+exchangeAppId);
-	console.log('exchangeAPIcurrencies: ' + exchangeBaseUrl+exchangeAPIcurrencies+exchangeQuery+exchangeAppId);
-	console.log('exchangeAPItime: ' + exchangeBaseUrl+exchangeAPItime+exchangeQuery+exchangeAppId);
+
 
 //now playing/spotify/itunes
 

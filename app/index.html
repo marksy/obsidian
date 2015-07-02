@@ -17,11 +17,12 @@
 	  
 	  <header ng-controller="HeaderController">
 		<ul>
-			<li ng-class="{ 'active': isActive('#/home')}"><a href="#/home">home</a></li>
-			<li ng-class="{ 'active': isActive('#/weather')}"><a href="#/weather">weather</a></li>
+			<li><a href="#/home">home</a></li>
+			<li><a href="#/weather">weather</a></li>
 			<li><a href="#/tfl">tfl</a></li>
 			<li><a href="#/strava">strava</a></li>
-			<li><a href="#/stocks">stocks</a></li>
+			<li><a href="#/finance">finance</a></li>
+			<li><a href="#/people">people</a></li>
 			<li><a href="#/config">config</a></li>
 		</ul>
 	  </header>
@@ -30,6 +31,8 @@
 
 	<section class="date-time" ng-cloak>
 		<p><span my-current-time="dateTimeFormat"></span></p>
+		
+		
 	</section>
 
 	<div id="page" ng-view ng-cloak class="container">

@@ -24,9 +24,13 @@
 				templateUrl: 'views/strava.html',
 				controller: 'StravaController'
 			})
-			.when('/stocks', {
-				templateUrl: 'views/stocks.html',
-				controller: 'StocksController'
+			.when('/finance', {
+				templateUrl: 'views/finance.html',
+				controller: 'FinanceController'
+			})
+			.when('/people', {
+				templateUrl: 'views/people.html',
+				controller: 'PeopleController'
 			})
 			.when('/config', {
 				templateUrl: 'views/config.html',

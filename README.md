@@ -7,6 +7,9 @@ Based on a few technologies and tied up and bound into an app.
 * Homepage: [marksy.com](http://marksy.com)
 * Twitter: [@marksy](http://twitter.com/marksy)
 
+## to do
+need to add each service call into a factory/factories and call them in a timeout
+
 ## get started
 
 To write

@@ -1,0 +1,46 @@
+<h2 id="finance">finance</h2>
+<div>
+	<p>How much foreign current does it cost for £1.00 {{cleanData.base}}</p>
+	<ul>
+		<li><p>Kiwi Dollars: ${{cleanData.rates.NZD | number:2}} = &pound;1.00{{cleanData.base}}</p></li>
+		<li><p>Greenback: ${{cleanData.rates.USD | number:2}} = &pound;1.00{{cleanData.base}}</p></li>
+	</ul>
+	
+	<table class="table">
+		<tr>
+			<th>Currency</th>
+			<th>5 days ago</th>
+			<th>4 days ago</th>
+			<th>3 days ago</th>
+			<th>2 days ago</th>
+			<th>1 day ago</th>
+			<th>today</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr>
+			<td>NZD</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+		</tr>
+		<tr>
+			<td>USD</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+			<td> $$</td>
+		</tr>
+	</table>
+	
+	<p>yesterday: {{ yesterday1 | date:'yyyy-MM-dd'}}</p>
+	<p>day before yesterday: {{ yesterday2 | date:'yyyy-MM-dd'}}</p>
+	<p>three days ago: {{ yesterday3 | date:'yyyy-MM-dd'}}</p>
+	<p>four days ago: {{ yesterday4 | date:'yyyy-MM-dd'}}</p>
+	<p>five days ago: {{ yesterday5| date:'yyyy-MM-dd'}}</p>
+	
+</div>

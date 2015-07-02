@@ -14,6 +14,31 @@
             	$scope.root.isProcessing = false;
             }
         }
+		
+		$scope.persons = [
+		    {id:0,"name": "Mark", "status": "at home"},
+		    {id:1,"name": "Rouzie", "status": "gone shopping"},
+		    {id:2,"name": "Quincy", "status": "meout"},
+		    {id:3,"name": "Goatie", "status": "under the bed"}
+		];
+		
+		$scope.statuses = [ 'at home', 'gone shopping', 'hiding under the bed', 'meout'];
+		
+		$scope.changeStatus = function(person,selection) {
+			console.log('was: ' + person.status);
+			person.status = selection;
+			console.log('now: ' + person.status);
+		}
+		
+		$scope.pushNewStatus = function(addNewStatus) {
+			if(addNewStatus != undefined) {
+				console.log(addNewStatus);
+				$scope.statuses.push(addNewStatus);
+				console.log($scope.statuses);
+			}
+		}
+
+		console.log($scope.yesterday1);
 
         $scope.root.setStatus(200);
 		
@@ -57,8 +82,8 @@
 	            }, updateMinutes);
 			}
 		}
-		Twitter.update();
-		Twitter.later();
+		// Twitter.update();
+// 		Twitter.later();
 		
 		
 	
@@ -141,7 +166,6 @@
 			var lamb = JSON.parse('{"trains":[' + bisc + ']}');
 
 			$scope.trains = lamb.trains;
-			// console.log(lamb.trains);
 		}
 
 		})
@@ -168,10 +192,53 @@
 		
 	}]);
 	
-	app.controller('StocksController', ['$scope', '$rootScope', function($scope,$rootScope){
+	app.controller('FinanceController', ['$scope', '$rootScope', '$http', function($scope,$rootScope,$http){
 		$scope.root = $rootScope;
 		
-		console.log('StocksController');
+		$scope.yesterday1 = previousDay.setDate(toDate.getDate()-1);
+		$scope.yesterday2 = previousDay.setDate(toDate.getDate()-2);
+		$scope.yesterday3 = previousDay.setDate(toDate.getDate()-3);
+		$scope.yesterday4 = previousDay.setDate(toDate.getDate()-4);
+		$scope.yesterday5 = previousDay.setDate(toDate.getDate()-5);
+		
+		var mapth = $scope.yesterday1;
+		console.log(mapth);
+		
+		$http.get(financeUrl).success(function(data){
+			console.log('yesterday sx: ' + data);
+		})
+		.error(function(data){
+			console.log('yesterday er: ' + data);
+		});
+
+		
+		$http.get(financeLatest).success(function(data){
+			$scope.trimData = data.slice(5,-1);
+			$scope.cleanData = JSON.parse($scope.trimData);
+			
+			
+			
+
+		}).error(function(data) {
+			console.log('finance error: ' + data);
+		});
+		
+		console.log('FinanceController');
+		
+	}]);
+	
+	app.controller('PeopleController', ['$scope', '$rootScope', function($scope,$rootScope){
+		$scope.root = $rootScope;
+				
+		
+
+		
+		// $scope.updateUser = function() {
+// 			console.log('this is update');
+// 			$scope.person.status = $scope.selection.status;
+// 		};
+				
+		console.log('PeopleController');
 		
 	}]);
 	
