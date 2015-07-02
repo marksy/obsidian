@@ -17,17 +17,21 @@
 		
 		$scope.persons = [
 		    {id:0,"name": "Mark", "status": "at home"},
-		    {id:1,"name": "Rouzie", "status": "gone shopping"},
+		    {id:1,"name": "Rouzie", "status": "shopping"},
 		    {id:2,"name": "Quincy", "status": "meout"},
 		    {id:3,"name": "Goatie", "status": "under the bed"}
 		];
 		
-		$scope.statuses = [ 'at home', 'gone shopping', 'hiding under the bed', 'meout'];
+		$scope.statuses = [ 'at home', 'shopping', 'hiding under the bed', 'meout'];
 		
 		$scope.changeStatus = function(person,selection) {
-			console.log('was: ' + person.status);
-			person.status = selection;
-			console.log('now: ' + person.status);
+			if(selection != undefined) {
+				console.log('was: ' + person.status);
+				person.status = selection;
+				console.log('now: ' + person.status);
+			} else {
+				alert('nothing changed, ' + person.name + ' is ' + person.status);
+			}
 		}
 		
 		$scope.pushNewStatus = function(addNewStatus) {
@@ -36,6 +40,22 @@
 				$scope.statuses.push(addNewStatus);
 				console.log($scope.statuses);
 			}
+		}
+		
+		$scope.pushNewPerson = function(addNewPerson) {
+			if(addNewPerson != undefined) {
+				var count = $scope.persons.length;
+				
+				var AddNewGuy = new function() {
+					this.id = count;
+					this.name = addNewPerson;
+					this.status = '';
+				}
+				
+				var currList = $scope.persons;
+				var newList = currList.concat(AddNewGuy);
+				$scope.persons = newList;
+							}
 		}
 
 		console.log($scope.yesterday1);
@@ -110,7 +130,11 @@
 		
 		var Weather = {
 		    update: function() {
+				$scope.isProcessing = true;
+				$scope.hasError = false;
 				$http.get(weatherUrl).success(function(data,status,headers,config){
+					$scope.isProcessing = false;
+					$scope.hasError = false;
 					//console.log('weather-update');
 					// console.log('weather is a ' + typeof data);
 					//Period[0] is today, and Rep[0] is the current segment
@@ -130,6 +154,7 @@
 					//console.log(data.SiteRep.DV.Location.Period[0]);
 				})
 				.error(function(data,status,headers,config){
+					$scope.hasError = true;
 					console.log('error: ' + data,status,headers,config);
 				});
 		    },
@@ -149,7 +174,11 @@
 	app.controller('TFLController', ['$scope', '$rootScope', '$http', function($scope,$rootScope,$http){
 		$scope.root = $rootScope;
 		
+		$scope.isProcessing = true;
+		$scope.hasError = false;
+		
 		$http.get(tflUrl).success(function (data,status,headers,config) {
+		$scope.isProcessing = false;
 			// console.log('data: ' + data);
 			if(data[0] == '<') {
 				console.log('error coneccted');
@@ -170,6 +199,7 @@
 
 		})
 		.error(function (data,status,headers,config) {
+			$scope.hasError = true;
 			console.log('error: ' + data);
 		});
 		
@@ -180,10 +210,15 @@
 	app.controller('StravaController', ['$scope', '$rootScope', '$http', function($scope,$rootScope,$http){
 		$scope.root = $rootScope;
 		
+		$scope.isProcessing = true;
+		$scope.hasError = false;
+		
 		$http({ method: 'JSONP', url: stravaUrl }).success(function(data){
+			$scope.isProcessing = false;
 			$scope.activities = data;
 		})
 		.error(function(data){
+			$scope.hasError = true;
 			console.log('strava error: ' + data);
 		});
 		

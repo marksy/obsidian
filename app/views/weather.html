@@ -1,39 +1,45 @@
 <h2 id="weather">weather</h2>
 
-		<div class="loading-icon center clear center-block" ng-show="root.isProcessing">
-			<p>Please wait...</p>
+<div ng-show="hasError">
+	<p>Problem connecting to data service</p>
+</div>
+
+
+<div class="loading-icon center clear center-block" ng-if="isProcessing && !hasError">
+	<p>Please wait...</p>
+</div>
+
+<div ng-show="!isProcessing">
+	<h3>{{ location }} today</h3>
+	<ul>
+		<li class="temp">
+			<p>{{ temp }}˚c</p>
+		</li>
+		<li class="windspeed">
+			<p>{{ windspeed }}mph</p>
+		</li>
+		<li class="rain">
+			<p>{{ rain }}% chance of rain</p>
+		</li>
+		<li class="type">
+			<p>{{ type }} <img ng-src="/assets/img/weather/{{ typeNo }}.svg" class="climacon" alt="{{ type }}" /></p>
+		</li>
+	</ul>
+	<hr/>
+	<h3>{{ location }} tomorrow</h3>
+	<ul>
+		<li class="temp">
+			<p>{{ tempTom }}˚c</p>
+		</li>
+		<li class="windspeed">
+			<p>{{ windspeedTom }}mph</p>
+		</li>
+		<li class="rain">
+			<p>{{ rainTom }}% chance of rain</p>
+		</li>
+		<li class="type">
+			<p>{{ typeTom }} <img ng-src="/assets/img/weather/{{ typeNoTom }}.svg" class="climacon" alt="{{ typeTom }}" /></p>
+		</li>
+	</ul>
+
 		</div>
-
-<h3>{{ location }} today</h3>
-<ul>
-	<li class="temp">
-		<p>{{ temp }}˚c</p>
-	</li>
-	<li class="windspeed">
-		<p>{{ windspeed }}mph</p>
-	</li>
-	<li class="rain">
-		<p>{{ rain }}% chance of rain</p>
-	</li>
-	<li class="type">
-		<p>{{ type }} <img ng-src="/assets/img/weather/{{ typeNo }}.svg" class="climacon" alt="{{ type }}" /></p>
-	</li>
-</ul>
-<hr/>
-<h3>{{ location }} tomorrow</h3>
-<ul>
-	<li class="temp">
-		<p>{{ tempTom }}˚c</p>
-	</li>
-	<li class="windspeed">
-		<p>{{ windspeedTom }}mph</p>
-	</li>
-	<li class="rain">
-		<p>{{ rainTom }}% chance of rain</p>
-	</li>
-	<li class="type">
-		<p>{{ typeTom }} <img ng-src="/assets/img/weather/{{ typeNoTom }}.svg" class="climacon" alt="{{ typeTom }}" /></p>
-	</li>
-</ul>
-
-		

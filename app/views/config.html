@@ -11,7 +11,19 @@
 			<button ng-click="changeStatus(person,selection)">update</button>
 		</li>
 	</ul>
-	<label><span></span>
+	
+	<hr />
+	
+	<label>
+		<span class="label-control">add new status</span>
 		<input type="text" ng-model="addNewStatus" />
-		<button ng-click="pushNewStatus(addNewStatus)">add</button></label>
+		<button ng-click="pushNewStatus(addNewStatus)">add</button>
+	</label>
+	<hr />
+	<label>
+		<span class="label-control">add new person</span>
+		<input type="text" ng-model="addNewPerson" />
+		<button ng-click="pushNewPerson(addNewPerson)">add</button>
+	</label>
+
 </div>
