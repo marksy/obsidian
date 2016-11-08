@@ -52,7 +52,7 @@ var HTTP_STATUS_CODES = {
 // time and date
 var toDate = new Date();
 var previousDay = new Date(toDate);
-
+var menuCounter = 0;
 
 // twitter
 var	tweet,
@@ -122,9 +122,8 @@ var financeLatest = financeUrl + 'latest?symbols=' + financeUSDCurrency + ',' + 
 
 
 
-//now playing/spotify/itunes
+//now playing/spotify/itunes/lastfm
 
 //staff
 
 //jira
-

@@ -31,10 +31,11 @@ function beerOClock(d,h,m) {
 		daysTil = (day-beerDay) + beerDay;
 		console.log(daysTil + ' days, ' + (beerHour - hour) + 'hrs, ' + (60 - minutes + beerMinutes) + 'mins until Beer O\'Clock');
 	}
-
+	console.log('day: ' +  day);
+	console.log('beer day: ' +  beerDay);
+	console.log('days til: ' +  daysTil);
 	
 }
 
 beerOClock(5,17,20);
-
 

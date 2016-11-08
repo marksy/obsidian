@@ -296,7 +296,7 @@ module.exports = function (grunt) {
    * Run `grunt` on the command line
    */
   grunt.registerTask('default', [
-    'sass:dev',
+    // 'sass:dev',
     'bower:dev',
     'autoprefixer:dev',
     'cssmin:dev',
@@ -313,7 +313,7 @@ module.exports = function (grunt) {
    * Then compress all JS/CSS files
    */
   grunt.registerTask('build', [
-    'sass:dist',
+    // 'sass:dist',
     'bower:dist',
     'autoprefixer:dist',
     'cssmin:dist',
